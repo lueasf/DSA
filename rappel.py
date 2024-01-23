@@ -1,5 +1,9 @@
-# STRUCTURES DE DONNÉES
+# STRUCTURES DE DONNÉES #
 
+"""
+Listes dico modifiables, ensembles sans doublons, tuples non modifiables avec ordres.
+L = [1,2], D = {1:2}, S = {1,2}, T = (1,2)
+"""
 
 # LISTES
 L = [1, 2, 3]
@@ -41,11 +45,11 @@ L[1:-1] # renvoie [2, 3, 4, 5]
 L[1:-1:2] # renvoie [2, 4]
 L[::-1] # renvoie [6, 5, 4, 3, 2, 1] (inverse la liste)
 
-
-
 # TUPLES
-# ENSEMBLES
-
+t = (1, 2, 2, 3)
+t[0] # renvoie 1
+t.count(2) # renvoie 2
+t.index(2) # renvoie 1
 
 # DICTIONNAIRES
 dico = {"nom": "Dupont", "prenom": "Jean", "age": 30} # Création d'un dictionnaire avec des valeurs
@@ -62,8 +66,22 @@ clef = dico.keys() # Renvoie les clés
 for value in dico.values():
     print(value)
 
-# SETS
+# SETS (pas de doublons)
+s = set() # Création d'un ensemble vide
+s = {1, 2, 3}
+t = {3, 4, 5}
+s.add(4) # Ajoute 4 à l'ensemble
+s.remove(2) # Supprime 2 de l'ensemble
+s.discard(2) # Supprime 2 de l'ensemble si il existe
+union_set = s.union(t) # Renvoie l'union de s et t
+intersection_set = s.intersection(t) # Renvoie l'intersection de s et t
+difference_set = s.difference(t) # Renvoie la différence de s et t
+s.update({5,6,7}) # Ajoute 5, 6 et 7 à l'ensemble s
+
 # FROZENSETS
+fs = frozenset([1, 2, 3]) # Création d'un ensemble immuable
+fs.add(4) # Lève une exception car l'ensemble est immuable
+
 # STRINGS
 s = "Bonjour : Lue"
 s[0] # renvoie B
@@ -83,8 +101,15 @@ s = "123abc"
 s.isalnum() # renvoie True car il y a des chiffres et des lettres
 s = " "
 s.isspace() # renvoie True
-
 #utiliser index:
 s = "Bonjour : Lue"
 s.index("B") # renvoie 0
 s.partition(":") # renvoie ('Bonjour ', ':', ' Lue')
+s.strip() # enlève les espaces au début et à la fin
+
+# FILES
+f = open("fichier.txt", "r") # Ouverture en lecture seule
+f = open("fichier.txt", "w") # Ouverture en écriture seule
+lines = f.readlines() # Renvoie une liste contenant toutes les lignes du fichier
+line = f.readline() # Renvoie la ligne suivante du fichier
+f.close() # Ferme le fichier
