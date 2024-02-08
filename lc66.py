@@ -1,7 +1,7 @@
 # un nb est representé par une liste : ajouter 1 au nb et renvoyer la liste:
 
 class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
+    def plusOne(self, digits: list[int]) -> list[int]:
         nbneuf = 0
         for i in range(1,len(digits) + 1):
             if digits[-i] == 9:
