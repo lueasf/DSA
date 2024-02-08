@@ -106,6 +106,8 @@ s = "Bonjour : Lue"
 s.index("B") # renvoie 0
 s.partition(":") # renvoie ('Bonjour ', ':', ' Lue')
 s.strip() # enlève les espaces au début et à la fin
+s.lstrip() # enlève les espaces au début
+s.rstrip() # enlève les espaces à la fin
 s.palindrome() # renvoie False
 
 # FILES
