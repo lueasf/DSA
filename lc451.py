@@ -29,4 +29,3 @@ sorted_strings = sorted(strings, key=len)
 data = [(1, 'apple'), (3, 'banana'), (2, 'orange')]
 sorted_data = sorted(data, key=lambda x: x[1])
 # renvoie [(1, 'apple'), (3, 'banana'), (2, 'orange')]
-
