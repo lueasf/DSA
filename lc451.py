@@ -17,7 +17,7 @@ class Solution:
             res += lettre * count
         return res
     
-#exemples de key :
+#exemples de key : 
 people = [{'name': 'Alice', 'age': 30},{'name': 'Bob', 'age': 25},{'name': 'Charlie', 'age': 35}]
 sorted_people = sorted(people, key=lambda x: x['age']) 
 # renvoie [{'name': 'Bob', 'age': 25}, {'name': 'Alice', 'age': 30}, {'name': 'Charlie', 'age': 35}]
