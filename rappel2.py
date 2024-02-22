@@ -1,4 +1,14 @@
 # BACKTRACKING
+# C'est un type de parcours d'arbe
+# on à un problème et on trouve une solution
+# EXEMPLE : résoudre un sudoku
+
+
+
+
+
+
+
 # DYNAMIC PROGRAMMING
 # C'est quoi la prgrammation dynamique?
 # La programmation dynamique est une méthode pour résoudre des problèmes en décomposant en sous-problèmes.
