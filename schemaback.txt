@@ -1,0 +1,11 @@
+Schéma Backtracking :
+
+Backtracking(T : soluttion partielle):
+    si Est_candidat(T):
+        Renvoie(T)
+    sinon:
+        Pour tous voisin(T) v:
+            r = Backtracking(v)
+            Si r != None:
+                renvoie r
+    renvoie None

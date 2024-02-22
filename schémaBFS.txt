@@ -1,0 +1,16 @@
+BFS(situation_initiale)
+    Q = FileVide()
+    Enfiler(Q, situation_initiale)
+    ListeDejaVu = ListeVide()
+    
+    Tant que Q non vide:
+        temp = Defiler(Q)
+        Si temp candidat:
+            renvoyer temp
+        Sinon:
+            Pour tous voisins v de temp:
+                Si v pas dans ListeDejaVu:
+                    Ajouter(ListeDejaVu,v)
+                    Enfiler(Q, v)
+
+    Renvoyer PasDeSolution
