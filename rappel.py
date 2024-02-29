@@ -115,6 +115,7 @@ s = "Bonjour : Lue"
 s[0] # renvoie B
 s[1:3] # renvoie on
 s.upper() # renvoie BONJOUR : LUE
+s.lower() # renvoie bonjour : lue
 s.startswith("B", 0, 1) # renvoie True car B est à l'indice 0 et on regarde de l'indice 0 à 1
 #utiliser join:
 s = "Bonjour : Lue"
