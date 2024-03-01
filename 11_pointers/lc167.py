@@ -14,6 +14,17 @@ def twoSum(numbers, target):
         elif sum_v < target:
             l+=1
         else:
-            return  [l+1, r+1]       
+            return  [l+1, r+1]
+        
+#BETTER
+def twoSum2(numbers, target):
+    vu = {}
+    for i in range(len(numbers)):
+        diff = target - numbers[i]
+        if diff in vu:
+            return [vu[diff] + 1, i +1]
+        else:
+            vu[numbers[i]] = i
 
 print(twoSum([2,7,11,15], 9))
+print(twoSum2([2,7,11,15], 9))
