@@ -6,6 +6,7 @@ class Solution:
             if string[i] != string[-i - 1]:
                     return False
         return True
+    
     def firstPalindrome(self, words: list[str]) -> str:
         for i in range(len(words)):
             if self.pal(words[i]):
