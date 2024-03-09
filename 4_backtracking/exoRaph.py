@@ -32,6 +32,25 @@ def sacc(obj,sac, taillesac):
 
 #si on met un paramètre dans la fonction et qu'on le change par la suite, ça fait une erreur.
 
+# OU
+
+def backtracking(sac, objets, taille):
+    if taille == 0:
+        return sac
+    if len(objets) == 0:
+        return sac
+    if taille < 0:
+        return sac
+    else:
+        sac.append(objets[0])
+        sac1 = backtracking(sac, objets[1:], taille - objets[0])
+        sac.pop()
+        sac2 = backtracking(sac, objets[1:], taille)
+        if len(sac1) > len(sac2):
+            return sac1
+        else:
+            return sac2
+
 a = []
 def f(b):
     b.append(1)
