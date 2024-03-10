@@ -6,19 +6,25 @@
 
 # Depth-First Search (DFS) approach.
 
-def combinationSum(candidates, target):
-    ouput = []
-    def dfs(i, curr, total):
-        if total == target:
-            ouput.append(curr.copy())
-            return
-        if i >= len(candidates) or total > target:
-            return
-        curr.append(candidates[i])
-        dfs( i , curr, total + candidates[i])
-        curr.pop()
-        dfs( i + 1, curr, total)
-    dfs(0,[], 0)
-    return ouput
+# Input: candidates = [2,3,6,7], target = 7
+# Output: [[2,2,3],[7]]
 
-print(combinationSum([2,3,5],8))
+
+def combinationSum(candidates, target):
+    output = [] # var de retour
+    def dfs(i, curr, total): 
+        if total == target: # cas de base, on ajoute le res partiel a la liste
+            output.append(curr.copy())
+            return #on renvoie None pour la fin de l'arbre récursif
+        if i >= len(candidates) or total > target: #qs on a parcouru ts les nb ou c'est trop 
+            return #on stop
+        curr.append(candidates[i]) #on ajoute a un res partiel le premier nb
+        dfs(i, curr, total + candidates[i]) #encore dfs pour voir si c'est possible de rajouter le mm nb
+        curr.pop() # ça va faire plusieurs appel réc, la on veut changer de nb, on l'enleve et
+        dfs(i + 1, curr, total) # on va tester avec les autres
+    dfs(0, [], 0) # on commence par : le nb est me premier, le total vaut 0 et on a pas de sol partielle
+    return output
+
+# Le tout est un arbre
+
+print(combinationSum([2,3,6,7],7))
