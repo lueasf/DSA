@@ -4,14 +4,23 @@
 # output = [[1,1,6],[1,2,5],[1,7],[2,6]]
 
 def combinationSum2(candidates, target):
-    output = []
-    def dfs(i, curr, total):
-        if total == target:
-            output.append(curr.copy())
-            return
-        if total > target:
-            return
-        curr.append(candidates[i])
-        dfs( i and i!=j, curr, total + candidates[i])
-    dfs(0,[],0)
-    return output
+    candidates.sort()
+    res = []
+    def backtrack(position, cur, target): # i cur target
+        if target == 0:
+            res.append(cur.copy())
+        if target <= 0:
+            return        
+        prev = -1
+        for i in range(position, len(candidates)):
+            if candidates[i] == prev:
+                continue
+            cur.append(candidates[i])
+            backtrack(i+1, cur, target - candidates[i])
+            cur.pop()
+            prev = candidates[i]
+
+    backtrack(0,[], target)
+    return res
+
+print(combinationSum2([10,1,2,7,6,1,5], 8))
