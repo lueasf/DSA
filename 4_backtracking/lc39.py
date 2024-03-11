@@ -13,8 +13,9 @@ def combinationSum(candidates, target):
     output = [] # var de retour
     def dfs(i, curr, total): 
         if total == target: # cas de base, on ajoute le res partiel a la liste
-            output.append(curr.copy())
-            return #on renvoie None pour la fin de l'arbre récursif
+            if curr not in output:
+                output.append(curr.copy())
+                return #on renvoie None pour la fin de l'arbre récursif
         if i >= len(candidates) or total > target: #qs on a parcouru ts les nb ou c'est trop 
             return #on stop
         curr.append(candidates[i]) #on ajoute a un res partiel le premier nb
@@ -26,4 +27,4 @@ def combinationSum(candidates, target):
 
 # Le tout est un arbre
 
-print(combinationSum([2,3,6,7],7))
+print(combinationSum([2,2,3],8))

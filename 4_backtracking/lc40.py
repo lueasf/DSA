@@ -10,7 +10,7 @@ def combinationSum2(candidates, target):
         if target == 0:
             res.append(cur.copy())
         if target <= 0:
-            return        
+            return
         prev = -1
         for i in range(position, len(candidates)):
             if candidates[i] == prev:
