@@ -26,7 +26,7 @@ def combinaisonSum3(k, n):
         for j in range(i, 9):
             curr.append(nb[j])
             dfs(j + 1, curr, total + nb[j])
-            curr.pop()
+            curr.pop() # pour [1,...] et ba on enleve 1 et donc hop en re rentrant dans la boucle on met 2 : [2,...]
 
     dfs(0, [], 0)
     return output, nb
