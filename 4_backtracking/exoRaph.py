@@ -52,10 +52,10 @@ def backtracking(sac, objets, taille):
             return sac2
 
 a = []
-def f(b):
-    b.append(1)
-    return b
-
+def f(b): # car le paramètre b est un pointeur 
+    b.append(1) # donc en appelant la fonction f(a), on modifie a
+    return b 
+# on peut faire : L = L[:]
 
 if '__main__' == __name__:
     print(sacc([2,3,5,9,7],[],15))

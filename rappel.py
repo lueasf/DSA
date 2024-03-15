@@ -146,8 +146,8 @@ f = open("fichier.txt", "r") # Ouverture en lecture seule
 f = open("fichier.txt", "w") # Ouverture en écriture seule
 lines = f.readlines() # Renvoie une liste contenant toutes les lignes du fichier
 line = f.readline() # Renvoie la ligne suivante du fichier
+line = f.read() # revoie une liste contenant toutes les lignes du fichier
 f.close() # Ferme le fichier
-
 
 
 # DYNAMIC PROGRAMMING
