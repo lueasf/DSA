@@ -17,4 +17,14 @@ def productExcept(nums):
         right *= nums[i]
     return output
 
+def productExcept2(nums):
+    output = []
+    for i in range(len(nums)):
+        a = 1
+        for j in range(len(nums)):
+            if (i !=j):
+                a *= nums[j]
+        output.append(a)
+    return output
+
 print(productExcept([1,2,3,4]))

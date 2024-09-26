@@ -14,5 +14,15 @@ def groupAnagrams(strs):
             dict[so].append(s)
     return dict.values()
     
+def groupAnagrams2(strs):
+    dico = dict()
+    for i in range(len(strs)):
+        sw = sorted(strs[i])
+        sw = "".join(sw)
+        if sw not in dico.keys():
+            dico[sw] = [strs[i]]
+        else:
+            dico[sw].append(strs[i])
+    return dico.values()
 
 print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))

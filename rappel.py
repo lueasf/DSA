@@ -58,6 +58,7 @@ t.index(2) # renvoie 1
 
 
 # DICTIONNAIRES
+dico = dict # Création d'un dictionnaire vide
 dico = {"nom": "Dupont", "prenom": "Jean", "age": 30} # Création d'un dictionnaire avec des valeurs
 dico['nom'] # renvoie Dupont ( la clé )
 dico.get('nom') # renvoie Dupont ( la clé ) et None si jamais la clé n'existe pas
@@ -178,3 +179,23 @@ def fibonacci(n):
         memo[n] = fib(n - 1) + fib(n - 2)
         return memo[n]
     return fib(n)
+
+"""
+#10 fonctions python
+1- pprint (import)
+pprint() est une fonction qui permet d'afficher des objets de manière plus lisible.
+
+2- any()
+any() est une fonction qui renvoie True si au moins un élément d'un itérable est vrai.
+any(num > 0 for num in [1, 2, 3, -1]) # renvoie True mais False si tous les nombres sont négatifs
+ 
+3- all()
+all() est une fonction qui renvoie True si tous les éléments d'un itérable sont vrais.
+all(num > 0 for num in [1, 2, 3, -1]) # renvoie False car -1 est négatif
+
+4- enumerate()
+enumerate() est une fonction qui renvoie un objet énuméré.
+for i, j in enumerate([1, 2, 3]):
+    print(i, j) # 0 1, 1 2, 2 3 
+
+"""
