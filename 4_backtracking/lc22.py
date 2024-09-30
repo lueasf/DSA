@@ -4,18 +4,21 @@
 # Input: n = 3
 # Output: ["((()))","(()())","(())()","()(())","()()()"]
 
+# BYME
 def generateParenthesis(n):
-	def backtrack(left, right, s):
-		if len(s) == n * 2:
-			res.append(s)
-			return 
+	def backtrack(s, n, comp1, comp2, output):
+		if len(s) == 2*n:
+			output.append(s)
+			return
+		if comp1 < n:
+			backtrack(s + "(", n, comp1 + 1, comp2, output)
+		if comp2 < comp1:
+			backtrack(s + ")", n , comp1, comp2 + 1, output)
 
-		if left < n:
-			backtrack(left + 1, right, s + '(')
+	output = []
+	comp1, comp2 = 0,0
+	s = ""
+	backtrack(s, n, comp1, comp2, output)
 
-		if right < left:
-			backtrack(left, right + 1, s + ')')
-
-	res = []
-	backtrack(0, 0, '')
-	return res
+	return output
+			

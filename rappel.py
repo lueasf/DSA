@@ -181,8 +181,31 @@ def fibonacci(n):
         return memo[n]
     return fib(n)
 
+
+# PROG DYN
+# Définition d'une classe
+class Chien:
+    # Constructeur (appelé lors de la création d'un nouvel objet)
+    def __init__(self, nom, race):
+        self.nom = nom  # Attribut d'instance
+        self.race = race  # Attribut d'instance
+
+    # Méthode de la classe
+    def aboyer(self):
+        print(f"{self.nom} aboie : Woof!")
+
+# Création d'objets (ou instances) de la classe
+chien1 = Chien("Max", "Labrador")
+chien2 = Chien("Bella", "Bulldog")
+
+# Utilisation des méthodes de l'objet
+chien1.aboyer()  # Affiche : Max aboie : Woof!
+chien2.aboyer()  # Affiche : Bella aboie : Woof!
+
+
+#FONCTIONS PYTHON
 """
-#10 fonctions python
+#4 fonctions python
 1- pprint (import)
 pprint() est une fonction qui permet d'afficher des objets de manière plus lisible.
 
