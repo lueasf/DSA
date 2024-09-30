@@ -2,15 +2,15 @@
 # Input: s = "A man, a plan, a canal: Panama"
 # Output: true
 
+#BYME
 def isPalindrome(s):
     s = s.lower()
-    res = ""
-    for lettre in s:
-        if lettre.isalnum():
-            res += lettre
-    
-    for i in range(len(res)):
-        if res[i] != res[-i -1]:
+    new = ""
+    for i in s:
+        if i.isalnum():
+            new += i
+    for i in range(len(new)):
+        if (new[i] != new[-i -1]):
             return False
     return True
 

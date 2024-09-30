@@ -14,6 +14,7 @@ def groupAnagrams(strs):
             dict[so].append(s)
     return dict.values()
     
+#BYME
 def groupAnagrams2(strs):
     dico = dict()
     for i in range(len(strs)):

@@ -2,6 +2,7 @@
 # Input: height = [1,8,6,2,5,4,8,3,7]
 # Output: 49
 
+
 def maxArea(height):
     aire_max = 0
     l , r = 0 , len(height) -1

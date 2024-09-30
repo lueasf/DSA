@@ -3,6 +3,8 @@
 # Rappel, les sets ne contiennent pas de doublons, on utilise cette structure de données.
 # aussi appelé "Hash set" (calcule le hash de la valeur et les compares)
 
+
+#BYME 
 def containsDuplicate(nums):
     numset = set()
     for i in nums:
@@ -12,6 +14,7 @@ def containsDuplicate(nums):
             numset.add(i)
     return False
 
+#BYME
 def containsDuplicate2(nums):
     nums.sort()
     for i in range(len(nums)-1):

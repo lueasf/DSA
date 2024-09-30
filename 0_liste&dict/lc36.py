@@ -1,32 +1,42 @@
 # Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
-# MARCHE PAS.
 
+#BYME
 def isValidSudoku(board : list[list[str]]):
-    set_largeur = set()
-    for i in range(9):
-        for j in range(9):
-            if board[i][j].isdigit and board[i][j] in set_largeur:
-                return False
-            else:
-                set_largeur.add(int(board[i][j]))
+        #Lignes
+        for i in range(9):
+            dico = dict()
+            for j in range(9):
+                if board[i][j].isdigit():
+                    if board[i][j] not in dico:
+                        dico[board[i][j]] = 1
+                    else:
+                        return False
 
-    set_longeur = set()
-    for i in range(0):
-        if board[i][0].isdigit and board[i][0] in set_longeur:
-            return False
-        else:
-            set_longeur.add(int(board[i][0]))
-    
-    # regarder si il y a des doublons dans les carrés
-    set_carre = set()
-    for i in range(3):
-        for j in range(3):
-            if board[i][j].isdigit and board[i][j] in set_carre:
-                return False
-            else:
-                set_carre.add(int(board[i][j]))
-    return True
+        #Colones
+        for i in range(9):
+            dico = dict()
+            for j in range(9):
+                if board[j][i].isdigit():
+                    if board[j][i] not in dico:
+                        dico[board[j][i]] = 1
+                    else:
+                        return False
+        
+        #Carré
+        for i in range(3):
+            for j in range(3):
+                set_ = set()
+                for k in range(3):
+                    for l in range(3):
+                        val = board[i*3+k][j*3+l]
+                        if val.isdigit():
+                            if val in set_:
+                                return False
+                            else :
+                                set_.add(val)
+        
+        return True
 
 print(isValidSudoku([["5","3",".",".","7",".",".",".","."]
 ,["6",".",".","1","9","5",".",".","."]

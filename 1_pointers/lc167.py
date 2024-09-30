@@ -5,17 +5,18 @@
 # The intuition behind this solution is to use a two-pointer approach 
 # to find a pair of numbers in the sorted array that sums up to the target value.
 
+#BYME
 def twoSum(numbers, target):
-    l,r = 0, len(numbers)-1 # pointing ton start and end of the array
-    while l<r:
-        sum_v = numbers[l] + numbers[r]
-        if sum_v > target:
-            r -=1
-        elif sum_v < target:
+    l,r = 0, len(numbers) - 1
+    while l<r :
+        if (numbers[l]+numbers[r] == target):
+            return [l+1,r+1]
+        elif (numbers[l]+numbers[r] < target):
             l+=1
         else:
-            return  [l+1, r+1]
-        
+            r-=1
+    return []
+    
 #BETTER
 def twoSum2(numbers, target):
     vu = {}

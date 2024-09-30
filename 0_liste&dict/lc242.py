@@ -11,7 +11,7 @@ def isAnagram(s,t):
             sl.remove(i)
     return (sl==[])
 
-#mieux:
+#BYME
 def isAnagram(s: str, t: str):
     sorted_s = sorted(s)
     sorted_t = sorted(t)

@@ -17,6 +17,7 @@ def productExcept(nums):
         right *= nums[i]
     return output
 
+#BYME
 def productExcept2(nums):
     output = []
     for i in range(len(nums)):
