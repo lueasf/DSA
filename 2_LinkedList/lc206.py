@@ -1,20 +1,18 @@
-from typing import Optional
-# reverse list:
 
-# Definition for singly-linked list.
+# BYME
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
 
 class Solution:
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverseList(self, head):
         new_list = None
-        current = head
+        curr = head
 
-        while current: # cad is not None
-            next_node = current.next
-            current.next = new_list
-            new_list = current
-            current = next_node
+        while (curr):
+            next_node = curr.next
+            curr.next = new_list
+            new_list = curr.next
+            curr = next_node
         return new_list
