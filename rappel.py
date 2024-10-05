@@ -121,7 +121,7 @@ s.startswith("B", 0, 1) # renvoie True car B est à l'indice 0 et on regarde de 
 #utiliser join:
 s = "Bonjour : Lue"
 s2 = s.split(":") # ['Bonjour ', ' Lue']
-s3 = ":".join(s2) # Bonjour : Lue
+s3 = ":".join(s2) # renvoie Bonjour : Lue de type str
 #utiliser isdigit, isalpha, isalnum, isspace:
 s = "123"
 s.isdigit() # renvoie True
