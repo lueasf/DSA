@@ -1,8 +1,8 @@
 # Depth-First Search (DFS) ou Parcours en profondeur.
 # DFS est l'algo de base pour résoudre des problèmes de combinaisons et de permutations.
 
-# Comme on ne doit pas avoir avoir de doublons, on crée un arbre avec une branche ou on inclut
-# le nombre et la branche ou on l'inclut pas. Ce qui fait 2 choix à chaque fois.
+# Comme on peut avoir des doublons, on fait un arbre : "on prends ce nb, ou on prends pas ce nb"
+# [] -> [1] et [] -> [], [1] -> [1,2] et [1] -> [1], [1,2] -> [1,2,2] et [1,2] -> [1,2] etc
 
 # Input: candidates = [2,3,6,7], target = 7
 # Output: [[2,2,3],[7]]

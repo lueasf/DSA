@@ -3,24 +3,26 @@
 # Input: candidates = [10,1,2,7,6,1,5], target = 8
 # output = [[1,1,6],[1,2,5],[1,7],[2,6]]
 
-def combinationSum2(candidates, target):
-    candidates.sort()
-    res = []
-    def backtrack(position, cur, target): # i cur target
-        if target == 0:
-            res.append(cur.copy())
-        if target <= 0:
-            return
-        prev = -1
-        for i in range(position, len(candidates)):
-            if candidates[i] == prev:
-                continue
-            cur.append(candidates[i])
-            backtrack(i+1, cur, target - candidates[i])
-            cur.pop()
-            prev = candidates[i]
+#utilisation d'un arbre de backtracking
 
-    backtrack(0,[], target)
-    return res
+# BYME
+def combinationSum2(self, candidates, target: int):
+    res = []
+    candidates.sort()
+    def dfs(index,curr,total):
+        if total == target:
+            res.append(curr.copy())
+            return
+        if total > target:
+            return
+        else:
+            for i in range(index,len(candidates)):
+                if i > index and candidates[i] == candidates[i -1]:
+                    continue
+                curr.append(candidates[i])
+                dfs(i + 1, curr, total + candidates[i])
+                curr.pop()
+        return res
+    return dfs(0,[],0)
 
 print(combinationSum2([10,1,2,7,6,1,5], 8))
