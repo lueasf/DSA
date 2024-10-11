@@ -3,7 +3,7 @@
 # Output: [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
 
 class Solution:
-    def generate(self, numRows: int) -> List[List[int]]:
+    def generate(self, numRows: int)  :
         if numRows == 0:
             return []
         if numRows == 1:
@@ -22,7 +22,7 @@ class Solution:
 
 # PROG DYNAMIQUE
 class Solution:
-    def generate(self, numRows: int) -> List[List[int]]:
+    def generate(self, numRows: int)  :
         ans = [[1]]
 
         for i in range(1, numRows):

@@ -23,3 +23,6 @@ def permute(nums):
     return dfs(0)
 
 print(permute([1,2,3]))
+
+# LC
+

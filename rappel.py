@@ -181,8 +181,7 @@ def fibonacci(n):
         return memo[n]
     return fib(n)
 
-
-# PROG DYN
+ 
 # Définition d'une classe
 class Chien:
     # Constructeur (appelé lors de la création d'un nouvel objet)
