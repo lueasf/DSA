@@ -8,7 +8,7 @@ def lineIndex(line: int, column: int):
     return n + column -1
 
 # Ex2
-# Q1
+# Q1 O(n!)
 def permutations(n):
     L = [i for i in range(n)]
     res = []
@@ -49,7 +49,7 @@ def correct(pyramide, h):
 
     return True
 
-# Q3
+# Q3 O(h²×n!)
 def solve(h):
     res = []
     n = (h*(h+1))//2
@@ -58,4 +58,27 @@ def solve(h):
             res.append(perm)
     return res
 
-print(solve(3))
+import time
+def test_performance_quick(h, iterations=100):
+    total_time = 0
+    results = []
+
+    for _ in range(iterations):
+        start_time = time.time()
+        result = solve(h)
+        end_time = time.time()
+        
+        execution_time = end_time - start_time
+        total_time += execution_time
+        results.append(len(result))
+
+    average_time = total_time / iterations
+    average_solutions = sum(results) / iterations
+
+    print(f"Test pour validPermutations({h}):")
+    print(f"Nombre d'itérations: {iterations}")
+    print(f"Temps moyen d'exécution: {average_time:.6f} secondes")
+    print(f"Nombre moyen de solutions: {average_solutions:.2f}")
+    print(f"Temps total pour {iterations} exécutions: {total_time:.6f} secondes")
+
+test_performance_quick(3)
