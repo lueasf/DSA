@@ -1,37 +1,6 @@
-# DFS (Depth-First Search) 
-def dfs(node):
-    visited = set()
-    def dfs(node):
-        if node in visited:
-            return
-        visited.add(node)
-        for neighbor in get_neighbors(node):
-            dfs(neighbor)
-    return visited
-
-
-# BFS (Breadth-First Search)
-from collections import deque
-
-def get_neighbors(node):
-    pass
-
-def bfs(start_node):
-    queue = deque([start_node])
-    visited = set([start_node])
-    
-    while queue:
-        current_node = queue.popleft()
-
-        for neighbor in get_neighbors(current_node):
-            if neighbor not in visited:
-                visited.add(neighbor)
-                queue.append(neighbor)
-
-# Dijkstra
-
 """
-# 5 étapes pour résoudre un problème
+#5 étapes pour résoudre un problème
+
 1) simplifier le problème.
 A l'oral, il faut savoir expliquer le problème.
 Trouver les cas de base et d'exception
@@ -56,6 +25,66 @@ Ex : O(log(n)) demande un binary search algo
 Regarder ligne par ligne si il y a un problème.
 
 """
+
+# DFS (Depth-First Search) : Parcours en profondeur
+def dfs(node):
+    visited = set()
+    def dfs(node):
+        if node in visited:
+            return
+        visited.add(node)
+        for neighbor in get_neighbors(node):
+            dfs(neighbor)
+    return visited
+
+
+# BFS (Breadth-First Search) : Parcours en largeur
+from collections import deque
+
+def get_neighbors(node):
+    pass
+
+def bfs(start_node):
+    queue = deque([start_node])
+    visited = set([start_node])
+    
+    while queue:
+        current_node = queue.popleft()
+
+        for neighbor in get_neighbors(current_node):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+
+
+# Merge Sort O(n log n) : Tri fusion
+# algo de tri par division et fusion
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
+    return merge_sort(left, right) # merge les tableaux
+
+# Quick Sort O(n log n) : Tri rapide
+# algo de tri par partition
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+
+    return quick_sort(left) + middle + quick_sort(right)
+
+# Dijkstra
+
+
 
 alors= "ondanse"
 print(f"Ce fichier est {__file__}")
