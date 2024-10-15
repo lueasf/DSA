@@ -10,20 +10,22 @@ def lineIndex(line: int, column: int):
 # Ex2
 # Q1 O(n!)
 def permutations(n):
-    L = [i for i in range(n)]
+    L = [i for i in range(1,n+1)]
     res = []
-    def dfs(index):
-        if index == n:
-            res.append(L.copy())
-            return
-        else:
-            for i in range(n):
-                L[index], L[i] = L[i], L[index]
-                dfs(index+1)
+    sol = [] # partial sol
 
-                L[index], L[i] = L[i], L[index]
-        return res
-    return dfs(0)
+    def dfs():
+        if len(sol) == n:
+            res.append(sol[:])
+            return
+        for x in L:
+            if x not in sol:
+                sol.append(x)
+                dfs()
+                sol.pop()
+    dfs()
+    return res
+        
 
 def permutations2(n):
     from itertools import permutations as it_permutations

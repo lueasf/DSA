@@ -12,6 +12,7 @@ L.insert(0, 0) # Ajoute 0 à l'indice 0
 
 L.pop() # Supprime le dernier élément de la liste et renvoie la valeur
 L.pop(0) # Supprime l'élément à l'indice 0 et renvoie la valeur
+L.popleft() 
 L.remove(2) # Supprime la valeur 2
 
 L.sort() # Trie la liste
@@ -46,7 +47,15 @@ L[1:-1:2] # renvoie [2, 4]
 L[::-1] # renvoie [6, 5, 4, 3, 2, 1] (inverse la liste)
 
 
-
+# break, continue, pass:
+for i in range(10):
+    if i == 5:
+        break # sort de la boucle for, 
+    if i == 3:
+        continue # passe à l'itération suivante, ici 4
+    if i == 2:
+        pass # ne fait rien
+    print(i)
 
 # TUPLES
 t = (1, 2, 2, 3)
@@ -146,9 +155,9 @@ s.palindrome() # renvoie False
 # FILES
 f = open("fichier.txt", "r") # Ouverture en lecture seule
 f = open("fichier.txt", "w") # Ouverture en écriture seule
-lines = f.readlines() # Renvoie une liste contenant toutes les lignes du fichier
-line = f.readline() # Renvoie la ligne suivante du fichier
-line = f.read() # revoie une liste contenant toutes les lignes du fichier
+lines = f.readlines() # Renvoie une liste contenant toutes les lignes du fichier: ['ligne 1\n', 'ligne 2\n']
+line = f.readline() # Renvoie la ligne suivante du fichier, si on l'appelle plusieurs fois, renvoie les lignes suivantes
+line = f.read() # f.read() renvoie tout le contenu du fichier sous forme de chaîne de caractères
 f.close() # Ferme le fichier
 
 

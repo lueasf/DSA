@@ -1,3 +1,35 @@
+def dichotomic_search(tab, low, high, element):
+    if low > high:
+        return -1
+    mid = (low + high) // 2
+    
+    if tab[mid] == element:
+        return mid
+    
+    elif tab[mid] > element:
+        return dichotomic_search(tab, low, mid - 1, element)
+    
+    else:
+        return dichotomic_search(tab, mid + 1, high, element)
+
+def dichotomic_search_iterative(tab, element):
+    low = 0
+    high = len(tab) - 1
+    
+    while low <= high:
+        mid = (low + high) // 2
+        
+        if tab[mid] == element:
+            return mid
+        elif tab[mid] > element:
+            high = mid - 1
+        else:
+            low = mid + 1
+    
+    return -1
+
+
+# Ex2
 def putInBag(sac, index):
     sac.append(index)  # Ajoutez l'index de l'objet au lieu du poids
 
@@ -39,3 +71,4 @@ sac = []
 # Appeler la fonction
 meilleure_valeur = ks_search(sac, capacité_maximale, 0, objets, valeurs)
 print("Meilleure valeur dans le sac à dos :", meilleure_valeur)
+
