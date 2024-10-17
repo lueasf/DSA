@@ -12,7 +12,7 @@ L.insert(0, 0) # Ajoute 0 à l'indice 0
 
 L.pop() # Supprime le dernier élément de la liste et renvoie la valeur
 L.pop(0) # Supprime l'élément à l'indice 0 et renvoie la valeur
-L.popleft() 
+L.popleft() # Supprime le premier élément de la liste et renvoie la valeur
 L.remove(2) # Supprime la valeur 2
 
 L.sort() # Trie la liste
@@ -67,10 +67,11 @@ t.index(2) # renvoie 1
 
 
 # DICTIONNAIRES
-dico = dict # Création d'un dictionnaire vide
+dico = dict() # Création d'un dictionnaire vide
 dico = {"nom": "Dupont", "prenom": "Jean", "age": 30} # Création d'un dictionnaire avec des valeurs
 dico['nom'] # renvoie Dupont ( la clé )
 dico.get('nom') # renvoie Dupont ( la clé ) et None si jamais la clé n'existe pas
+
 dico['Sexe'] = 'M' # Ajout
 item = dico.pop('nom') # Supprime la clé et renvoie la valeur
 
@@ -143,7 +144,7 @@ s.isspace() # renvoie True
 #utiliser index:
 s = "Bonjour : Lue"
 s.index("B") # renvoie 0
-s.partition(":") # renvoie ('Bonjour ', ':', ' Lue')
+s.partition(":") # renvoie ('Bonjour ', ':', ' Lue') qui est un tuple
 s.strip() # enlève les espaces au début et à la fin
 s.replace(" ", "") #enleve tous les espaces : 
 s.lstrip() # enlève les espaces au début
