@@ -1,5 +1,6 @@
-# Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
+# sudoku : Amazon
 
+# Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
 #BYME
 def isValidSudoku(board : list[list[str]]):
