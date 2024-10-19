@@ -1,9 +1,13 @@
+# Two Sum II : Amazon
+
 #Input: numbers = [2,7,11,15], target = 9
 # Output: [1,2]
 # Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
 
 # The intuition behind this solution is to use a two-pointer approach 
 # to find a pair of numbers in the sorted array that sums up to the target value.
+
+# FAV 
 
 #BYME
 def twoSum(numbers, target):

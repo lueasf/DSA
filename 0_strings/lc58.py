@@ -4,6 +4,6 @@ class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         s = s.rstrip()  # Supprime les espaces en fin de chaîne
         L = s.split(" ")
-        if not L[-1]:
+        if not L[-1]: # Si le dernier élément est vide
             L.pop() 
         return len(L[-1])  # Retourne la longueur du dernier mot

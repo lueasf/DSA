@@ -1,5 +1,6 @@
-# mxn matrice , croissantes
+# search a 2D matrix : Micorsoft
 
+# BYME
 
 def searchMatrix(matrix, target):
     liste = []

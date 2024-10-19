@@ -7,7 +7,7 @@ class Solution:
 
         for r in range(len(s)):
             if s[r] == "0":
-                res += (r- l)
+                res += (r - l)
                 l += 1
 
         return res

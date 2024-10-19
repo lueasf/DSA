@@ -1,5 +1,6 @@
-# parenthésage valide
+# Valid Parentheses : Facebook
 
+# FAV
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = [] #pile avec append et pop

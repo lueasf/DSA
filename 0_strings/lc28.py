@@ -1,5 +1,8 @@
-# Trouver l'index de l'occurence dans la chaine de caractère:
+# First occ : Google
 
+# Trouver l'index de l'occurence dans la chaine de caractère
+
+# FAV
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         n = len(needle)

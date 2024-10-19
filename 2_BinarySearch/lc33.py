@@ -1,9 +1,9 @@
-#33
+# Search : Google
 
-# BYME & GPT
+# BYME
 
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums, target) -> int:
         l, r = 0, len(nums) -1
 
         while (l<=r):

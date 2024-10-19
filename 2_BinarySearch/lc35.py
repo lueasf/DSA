@@ -1,7 +1,9 @@
+# Search Insert Pos : Salesforce, Amazon, Microsoft, Facebook
+
 # trouver l'index de qqch dans une liste triée et supposer sinon
 
 class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
+    def searchInsert(self, nums, target: int) -> int:
         if target in nums:
             n = nums.index(target)
             return n
