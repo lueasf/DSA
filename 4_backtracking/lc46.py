@@ -1,10 +1,10 @@
-# donner les permutations 
+# Permutations
 
 # Input: nums = [1,2,3]
 # Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
 
+# FAV
 
-# mieux
 # https://www.youtube.com/watch?v=gFm1lEfnzUQ
 def prmute(self, nums):
     n = len(nums)
@@ -23,6 +23,7 @@ def prmute(self, nums):
                 sol.pop()
     dfs()
     return res
+
 
 # DFS 
 # Faire un arbre dans lequel on va permuter chaque element avec tous les autres 1 fois.

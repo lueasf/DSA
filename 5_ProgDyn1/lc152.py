@@ -1,4 +1,4 @@
-# Maximum Product Array
+# Maximum Product Array : Amazon
 
 # O(n) pas fou mais ca marche
 

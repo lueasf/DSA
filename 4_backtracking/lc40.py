@@ -1,9 +1,13 @@
+# Combination Sum II : Amazon
+
 # meme pb que le 39, sauf que la chaque nombre doit etre utilisé au plus 1 fois dans une solution partielle
 
 # Input: candidates = [10,1,2,7,6,1,5], target = 8
 # output = [[1,1,6],[1,2,5],[1,7],[2,6]]
 
-#utilisation d'un arbre de backtracking
+# utilisation d'un arbre de backtracking
+
+# FAV
 
 # BYME
 def combinationSum2(self, candidates, target: int):

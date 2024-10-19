@@ -1,4 +1,4 @@
-# Climbing stairs
+# Climbing stairs : Amazon
 
 # il s'agit d'un arbre de décision avec 2 choix à chaque fois: ajouter 1 ou 2.
 # O(2^n) si on fait avec DFS
@@ -9,6 +9,8 @@
 # On va utiliser un tableau
 # etage 0, 1, 2, 3, 4, 5
 #       8, 5, 3, 2, 1, 1 (avec 1, 1 = one, two)
+
+# FAV 
 
 def climbStairs(n):
     one, two = 1, 1

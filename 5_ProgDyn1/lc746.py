@@ -1,9 +1,8 @@
-# Min Cost Climbing Stairs
-
+# Min Cost Climbing Stairs : Google
 # On remarque que l'arbre se répète donc on pense à la prog dyn.
 # Avec la liste, on peut completer le problème à l'envers.
 
-# BYEME
+# BYME
 class Solution:
     def minCostClimbingStairs(cost):
         for i in range(3,len(cost)+1):

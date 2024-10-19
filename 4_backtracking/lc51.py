@@ -1,4 +1,4 @@
-# Le problème des N reines
+# Le problème des N reines : Facebook
 
 # On utilise un quadrillage avec :
 # __
@@ -9,11 +9,10 @@
 # Input: n = 4
 # Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
 
-#  BYME 
 def solveNQueens(n):
     col = set()
-    posDiag = set() # r + c (row + col)
-    negDiag = set() # r - c       
+    posDiag = set() # r + c (row + col) /
+    negDiag = set() # r - c             \
 
     res = []
     board = [["."]*n for i in range(n)] 

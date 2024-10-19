@@ -1,3 +1,5 @@
+# Letter Combinations of a Phone Number : Amazon
+
 # Sur les anciens téléphone : 2 = a ou b ou c etc.
 # Input: digits = "23"
 # Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
@@ -13,9 +15,9 @@ def letterCombination(digits):
     output = []
 
     def backtrack(combination, next_d):
-        if not next_d: # cad if next_d == ""
+        if not next_d:
             output.append(combination)
-            return # équivaut a renvoyer un None, donc on revient à l'appel précedent.
+            return 
         for letter in dico[next_d[0]]:
             backtrack(combination + letter, next_d[1:])
 
