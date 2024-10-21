@@ -55,7 +55,7 @@ def correct(pyramide, h):
 def solve(h):
     res = []
     n = (h*(h+1))//2
-    for perm in permutations2(n):
+    for perm in permutations(n):
         if correct(perm, h):
             res.append(perm)
     return res

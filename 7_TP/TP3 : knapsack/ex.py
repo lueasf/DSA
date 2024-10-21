@@ -72,3 +72,5 @@ sac = []
 meilleure_valeur = ks_search(sac, capacité_maximale, 0, objets, valeurs)
 print("Meilleure valeur dans le sac à dos :", meilleure_valeur)
 
+
+

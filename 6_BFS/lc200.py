@@ -1,6 +1,10 @@
 # Number of Islands : Google, Uber
 
+# Problème de graphe
 # Time : O(m*n)
+
+# En gros on parcourt et des qu'on voit un 1, on le compte et tout ce qui est autour on le met a 0,
+# puis on continue le parcous avec dsf.
 
 # FAV
 

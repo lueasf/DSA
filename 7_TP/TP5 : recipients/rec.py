@@ -5,28 +5,24 @@ from collections import deque
 
 # return new containers state
 def transfert(src: int, dst: int, containers: List[int], capacities: List[int]) -> Tuple[str, List[int]]:
-    new_containers = containers.copy()
+    new_cont = containers.copy()
 
-    fountain_index = len(capacities)
+    font_index = len(capacities)
+    if src == font_index:
+        new_cont[dst] = capacities[dst]
+        action = f"remplir{dst}"
 
-    if src == fountain_index:
-        # assert new_containers[dst] < capacities[dst] # this assert was useful to detect useless transfert
-        new_containers[dst] = capacities[dst]
-        action_str = f"Remplir({dst})"
-    elif dst == fountain_index:
-        # assert new_containers[src] > 0 # this assert was useful to detect useless transfert
-        new_containers[src] = 0
-        action_str = f"Vider({src})"
-    else:
-        # assert(capacities[dst] - containers[dst] > 0) # this assert was useful to detect useless transfert
+    elif dst == font_index:
+        new_cont[src] = 0
+        action = f"vider{src}"
+    else: 
+        vol_min = min(new_cont[src], (capacities[dst] - new_cont[dst]))
+        new_cont[dst] += vol_min
+        new_cont[src] -= vol_min
+        action = f"remplir {dst} et vider {src} de {vol_min}"
+    
+    return action, new_cont
 
-        available_volume_in_dst = capacities[dst] - new_containers[dst]
-        volume_to_transfert = min(new_containers[src], available_volume_in_dst)
-        new_containers[src] -= volume_to_transfert
-        new_containers[dst] += volume_to_transfert
-        action_str = f"Transvaser({src}, {dst})"
-
-    return action_str, new_containers
 
 
 def find_one_solution_rec(
@@ -37,26 +33,20 @@ def find_one_solution_rec(
     fountain_index = len(capacities)
 
     # index == len(containers) is reserved for fountain
-    for src in range(0, len(containers) + 1):
+    for src in range(0, len(containers) + 1): # pareil que src in range(len(containers) + 1)
         if src != fountain_index and containers[src] == 0:
-            continue
+            continue # car on ne peut pas vider un recipient vide
 
         for dst in range(0, len(containers) + 1):
-
-            # skip transfert from and to the same container
-            # including src == fountain_index and dst == fountain_index:
+ 
             if src == dst:
                 continue
-            # skip transfert from an empty container
-            # skip transfert to a full container
+
             if dst != fountain_index and containers[dst] == capacities[dst]:
                 continue
 
-            # containers do not change, therefore we do not need to save them
-            # apply transfert and register actions in log
             action_str, new_containers = transfert(src, dst, containers, capacities)
             log.append(action_str)
-
 
             if (src != fountain_index and new_containers[src] == target_volume) or (
                 dst != fountain_index and new_containers[dst] == target_volume
@@ -65,9 +55,8 @@ def find_one_solution_rec(
 
             found, log = find_one_solution_rec(depth - 1, target_volume, new_containers, capacities, log)
             if found:
-                return found, log
-            # restore containers state / nothing to do since we work on new_containers was a copy
-            # but we need to unregister the last action in the log
+                return found, log 
+            
             log.pop()
     return False, log
 
@@ -113,18 +102,12 @@ def find_one_solution_with_memoization_rec(depth: int,target_volume: int,contain
         if src != fountain_index and containers[src] == 0:
             continue
         for dst in range(0, len(containers) + 1):
-
-            # skip transfert from and to the same container
-            # including src == fountain_index and dst == fountain_index:
+ 
             if src == dst:
-                continue
-            # skip transfert from an empty container
-            # skip transfert to a full container
+                continue 
             if dst != fountain_index and containers[dst] == capacities[dst]:
                 continue
-
-            # containers do not change, therefore we do not need to save them
-            # apply transfert and register actions in log
+ 
             action_str, new_containers = transfert(src, dst, containers, capacities)
  
             new_state = tuple(new_containers)

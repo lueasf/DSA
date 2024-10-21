@@ -60,6 +60,7 @@ def cavalier(echiquier: list[int], position: tuple[int, int], taille_cote: int) 
 
 
 # Même chose que la fonction précédente mais on évite de faire une copie en annulant les modifications qu'on fait à l'échiquier
+# on a donc une complexité en espace plus faible, mais on a une complexité en temps plus élevée
 def cavalier2(echiquier: list[int], position: tuple[int, int], taille_cote: int) -> bool:
     
     # Met a jour la case du cavalier
