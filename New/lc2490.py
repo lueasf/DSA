@@ -1,5 +1,6 @@
 # O(n) temps et espace
 
+# BYME
 class Solution:
     def isCircularSentence(self, sentence: str) -> bool:
         L = sentence.split()
