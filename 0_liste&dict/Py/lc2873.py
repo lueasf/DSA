@@ -1,5 +1,7 @@
 from typing import List
 
+# same as the 2874
+
 
 def maximumTripletValue(self, nums: List[int]) -> int:
         n = len(nums)
