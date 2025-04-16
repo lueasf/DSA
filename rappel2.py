@@ -128,6 +128,16 @@ Regarder ligne par ligne si il y a un problème.
 
 """
 
+# Calcul rapide de (x^y) % mod avec exponentiation rapide
+def power_mod(x, y, mod):
+    res = 1
+    while y > 0:
+        if y % 2 == 1:
+            res = (res * x) % mod
+        x = (x * x) % mod
+        y //= 2
+    return res
+
 # DFS (Depth-First Search) : Parcours en profondeur
 def dfs(node):
     visited = set()
