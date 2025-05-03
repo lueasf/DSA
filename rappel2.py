@@ -96,6 +96,38 @@ addition = lambda x, y: x + y
 # langage déclaratif : décrit le résultat souhaité sans spécifier comment l'obtenir. (SQL, HTML)
 # langage procédural : repose sur des procédures ou des fonctions. (C, Pascal, Fortran)
 
+### L'async en python :
+# L'asynchrone est un modèle de programmation qui permet à votre code de gérer
+# plusieurs tâches "simultanément" sans avoir besoin de multiples threads.
+# pratique pour les requêtes réseau et l'accès au fichiers.
+# sync : les opés bloquent jusqu'a etre effectué, async : l'inverse
+# Coroutines: Fonctions spéciales qui peuvent suspendre leur exécution et la reprendre plus tard
+# Event Loop: Le moteur qui exécute les coroutines et gère les tâches asynchrones
+
+import asyncio
+
+async def faire_cafe():
+    print("Préparation du café...")
+    await asyncio.sleep(3)
+    print("Café prêt!")
+    return "Café"
+
+async def faire_toast():
+    print("Préparation des toasts...")
+    await asyncio.sleep(2)
+    print("Toasts prêts!")
+    return "Toasts"
+
+async def petit_dejeuner():
+    # Exécute les deux tâches en parallèle
+    resultats = await asyncio.gather(
+        faire_cafe(),
+        faire_toast()
+    )
+    print(f"Petit déjeuner servi: {', '.join(resultats)}")
+
+asyncio.run(petit_dejeuner())
+
 
 
 ## Algorithmes 
