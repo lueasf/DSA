@@ -3,7 +3,14 @@
 """
 Listes dico modifiables, ensembles sans doublons, tuples non modifiables avec ordres.
 L = [1,2], D = {1:2}, S = {1,2}, T = (1,2)
-"""
+
+Subarray = contiguë : [1,2,3] → [1], [2], [3], [1,2], [2,3], [1,2,3]
+
+Subset = n'importe où : [1,2,3] → [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3], []
+
+Subarray → double boucle for i, for j
+
+Subset → backtracking/DFS"""
 
 # LISTES
 L = [1, 2, 3]
