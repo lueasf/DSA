@@ -23,8 +23,7 @@ class Solution:
     
 # dans res, on ajoute plein de sous-chaine sans répétition en on renvoie la plus longue
 
-# sliding windows
-
+# Sliding windows
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         l, r = 0, 0
